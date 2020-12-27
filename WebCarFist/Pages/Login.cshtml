@@ -1,0 +1,42 @@
+﻿@page
+@model WebCarFist.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div class="breadcrumb-wrap">
+    <div class="container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-page="index">Home</a></li>
+            <li class="breadcrumb-item active">Login</li>
+        </ul>
+    </div>
+</div>
+@Model.Msg
+<form method="post" asp-page="login">
+    <div class="login">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="register-form">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>UserName</label>
+                                <input class="form-control" type="text" id="username" placeholder="UserName" name="username">
+                            </div>
+                            <div class="col-md-12">
+                                <label>Password</label>
+                                <input class="form-control" type="password" id="inputPassword" placeholder="Password" name="password">
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn">Sign In</button>
+
+                                <a asp-page="register" style="text-align:right">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

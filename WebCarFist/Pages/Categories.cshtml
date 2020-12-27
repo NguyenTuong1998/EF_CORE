@@ -1,0 +1,46 @@
+﻿@page
+@model WebCarFist.Pages.CategoriesModel
+@using WebCarFist.Models
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div class="col-md-12">
+    <div class="product-view-top">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product-search">
+                    <h3>@Model.category.Name</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        @foreach (var product in Model.products)
+        {
+            Product p = (Product)product;
+             <div class="col-md-4">
+              <div class="product-item">
+                 <div class="product-title">
+                    <a asp-page="Details" asp-route-id="@product.Id">@p.Name</a>
+                    <div class="ratting">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                 </div>
+                <div class="product-image">
+                    <a asp-page="Details" asp-route-id="@product.Id">
+                    <img src="~/product/@product.Photo" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-price">
+                    <h3>$@p.Price</h3>
+                    <a class="btn" asp-page="Cart" asp-page-handler="buynow" asp-route-id="@product.Id"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+        }

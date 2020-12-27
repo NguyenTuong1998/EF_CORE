@@ -1,0 +1,12 @@
+﻿<div class="sidebar-widget category">
+    <h2 class="title">Category</h2>
+    <nav class="navbar bg-light">
+        <ul class="navbar-nav">
+            @foreach (var category in ViewBag.categories) {
+            <li class="nav-item">
+                <a class="nav-link" asp-page="Categories" asp-route-id="@category.Id"><i class="fas fa-car-side"></i>@category.Name</a>
+            </li>
+            }
+        </ul>
+    </nav>
+</div>

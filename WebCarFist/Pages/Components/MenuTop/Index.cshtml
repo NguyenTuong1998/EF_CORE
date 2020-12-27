@@ -1,0 +1,23 @@
+﻿
+<div class="navbar-nav ml-auto">
+    <div class="nav-item dropdown">
+
+        @if (ViewBag.usernameSession == null)
+        {
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+            <div class="dropdown-menu">
+                <a asp-page="login" class="dropdown-item">Login</a>
+                <a asp-page="register" class="dropdown-item">Register</a>
+            </div>
+        }
+        else
+        {
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Welcome @ViewBag.usernameSession</a>
+            <div class="dropdown-menu">
+                <a asp-page="#" class="dropdown-item">Profile</a>
+                <a asp-page="InvoiceManagement" asp-page-handler="logout" class="dropdown-item">Invoice</a>
+                <a asp-page="login" asp-page-handler="logout" class="dropdown-item">Logout</a>
+            </div>
+        }
+    </div>
+</div>

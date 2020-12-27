@@ -1,0 +1,8 @@
+﻿@page
+@model WebCarFist.Pages.WelcomeModel
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@using Microsoft.AspNetCore.Http;
+<h1>Welcome @Model.Username</h1>

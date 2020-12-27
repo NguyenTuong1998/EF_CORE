@@ -1,0 +1,85 @@
+﻿@page
+@model WebCarFist.Pages.CartModel
+
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div class="breadcrumb-wrap">
+    <div class="container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-page="Index">Home</a></li>
+            <li class="breadcrumb-item active">Cart</li>
+        </ul>
+    </div>
+</div>
+<form method="post" asp-page="cart">
+    <div class="cart-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="cart-page-inner">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity/Update
+                                        <button type="submit" class="btn-plus"><i class="far fa-save"></i></button>
+                                        </th>
+                                        <th>Total</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="align-middle">
+                                    @foreach (var item in Model.cart)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <img src="~/product/@item.product.Photo" alt="Image">
+                                                    <p>@item.product.Name</p>
+                                                </div>
+                                            </td>
+                                            <td>$@item.product.Price</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <input name="quantity" type="number" min="1" placeholder="1" size="16" value="@item.Quantity">
+                                                </div>
+                                            </td>
+                                            <td>$@(item.product.Price * item.Quantity )</td>
+                                            <td>                 
+                                                 <a class="btn-plus" asp-page="cart" asp-page-handler="remove" asp-route-id="@item.product.Id">
+                                                  <i class="fa fa-trash"></i>
+                                                  </a>
+                                                                                          
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cart-page-inner">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="cart-summary">
+                                    <div class="cart-content">
+                                        <h1>Cart Summary</h1>
+                                        <h2>Grand Total<span>$@Model.Total</span></h2>
+                                    </div>
+                                    <a class="btn cart-btn" asp-page="cart" asp-page-handler="checkout">
+                                        CheckOut
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,57 @@
+﻿@page
+@model WebCarFist.Pages.InvoiceManagementModel
+@using WebCarFist.Models
+@{
+    ViewData["Title"] = "InvoiceManagement";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div class="breadcrumb-wrap">
+    <div class="container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-page="index">Home</a></li>
+            <li class="breadcrumb-item active">Invoice Management<small style="margin-left:7px">[@Model.invoices.Count Item]</small></li>
+            
+        </ul>
+    </div>
+</div>
+<div class="product-detail">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <!--<th>Price</th>  -->
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var invoice in Model.invoices)
+                            {
+                                <tr>
+                                    <td>@invoice.Id</td>
+                                    <td>@invoice.Name</td>
+                                    <td>@invoice.Created.ToString("dd/MM/yyyy")</td>
+                                    <!--
+                                    <td>@invoice.</td>
+                                    <td>Approved</td>
+                                    -->
+                                    <td>
+                                        <a asp-page="InvoiceDetails" asp-route-id="@invoice.Id">
+                                            <button class="btn">View</button>
+                                        </a>
+                                        
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

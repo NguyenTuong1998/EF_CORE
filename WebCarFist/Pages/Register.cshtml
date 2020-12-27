@@ -1,0 +1,56 @@
+﻿@page
+@model WebCarFist.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div class="breadcrumb-wrap">
+    <div class="container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-page="index">Home</a></li>
+            <li class="breadcrumb-item active">Register</li>
+        </ul>
+    </div>
+</div>
+<form method="post" asp-page="register">
+    <div class="login">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="register-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="username">UserName</label>
+                                <input class="form-control" type="text" id="username" asp-for="@Model.account.UserName" placeholder="UserName">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fullname">FullName</label>
+                                <input class="form-control" type="text" placeholder="Full Name" id="fullname" asp-for="@Model.account.FullName">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="password">Password</label>
+                                <input class="form-control" type="password" id="inputPassword" placeholder="Password" asp-for="@Model.account.Password">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email">E-mail</label>
+                                <input class="form-control" type="text" placeholder="E-mail" id="email" asp-for="@Model.account.Email">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="address">Address</label>
+                                <input class="form-control" type="text" placeholder="Address" id="address" asp-for="@Model.account.Address">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone">Phone</label>
+                                <input class="form-control" type="text" placeholder="Phone" id="phone" asp-for="@Model.account.Phone">
+                            </div>
+
+                            <div class="col-md-12">
+                                <button type="submit" class="btn">Sign Up </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
