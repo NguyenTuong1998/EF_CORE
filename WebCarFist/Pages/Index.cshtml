@@ -6,31 +6,46 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-            @foreach (var product in Model.NewProducts)
-            {
-                Product p = (Product)product;
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <div class="product-title">
-                            <a asp-page="Details" asp-route-id="@product.Id">@p.Name</a>
-                            <div class="ratting">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="product-image">
-                            <a asp-page="Details" asp-route-id="@product.Id">
-                                <img src="~/product/@product.Photo" alt="Product Image">
-                            </a>
-                        </div>
-                        <div class="product-price">
-                            <h3>$@p.Price</h3>
-                            <a class="btn" asp-page="Cart" asp-page-handler="buynow" asp-route-id="@product.Id"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-                        </div>
-                    </div>
+@foreach (var product in Model.NewProducts)
+{
+    Product p = (Product)product;
+    <div class="col-md-4">
+        <div class="product-item">
+            <div class="product-title">
+                <a asp-page="Details" asp-route-id="@product.Id">@p.Name</a>
+                <div class="ratting">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
                 </div>
+            </div>
+            <div class="product-image">
+                <a asp-page="Details" asp-route-id="@product.Id">
+                    <img src="~/product/@product.Photo" alt="Product Image">
+                </a>
+            </div>
+            <div class="product-price">
+                <h3>$@p.Price</h3>
+                <a class="btn" asp-page="Cart" asp-page-handler="buynow" asp-route-id="@product.Id"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+            </div>
+        </div>
+    </div>
+}
+<div class="col-md-12">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
 
-            }

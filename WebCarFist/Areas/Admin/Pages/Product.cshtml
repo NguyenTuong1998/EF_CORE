@@ -1,0 +1,61 @@
+﻿@page
+@model WebCarFist.Areas.Admin.Pages.ProductModel
+@using WebCarFist.Models
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Areas/Admin/Pages/Shared/_AdminLayout.cshtml";
+}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        List Products
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Images</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Images</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var product in Model.products)
+                    {
+                    <tr>
+                        <td>                           
+                         <a asp-page="Details" asp-route-id="@product.Id">
+                             <img style="text-align-last:center" width="140" height="90" src="~/product/@product.Photo" alt="Product Image">
+                         </a>
+                        </td>
+                        <td>@product.Name</td>
+                        <td><span>$</span>@product.Price</td>
+                        <td>@product.Description</td>
+                        <td>
+                            <a asp-page="editproduct" asp-route-id="@product.Id">
+                                <i class="fas fa-edit"></i>
+
+                            </a>
+                            <a asp-page="product" asp-page-handler="delete" asp-route-id="@product.Id">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -16,21 +16,16 @@ namespace WebCarFist.Pages
 
         [BindProperty(Name = "keyword", SupportsGet = true)]
         public string keyword { get; set; }
-        public List<Product> products { get; set; }
+        public IEnumerable<Product> products { get; set; }
         public SearchModel(DatabaseContext _db)
         {
             db = _db;
         }
         public void OnGet()
         {
-            if(categoryId == -1)
-            {
-                products = db.Product.Where(p => p.Name.Contains(keyword)).ToList();
-            }
-            else
-            {
-                products = db.Product.Where(p => p.CategoryId == categoryId && p.Name.Contains(keyword)).ToList();
-            }
+            products= db.Product.Where(p => p.Name.Contains(keyword)).ToList();
+            
         }
+
     }
 }

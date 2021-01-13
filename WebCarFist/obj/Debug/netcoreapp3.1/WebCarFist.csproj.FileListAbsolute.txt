@@ -88,3 +88,13 @@ E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\WebCarFist.csprojAssemblyRefere
 E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Pages\Thanks.cshtml.g.cs
 E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Pages\InvoiceManagement.cshtml.g.cs
 E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Pages\InvoiceDetails.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Login.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Dashboard.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Shared\_AdminLayout.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\_ViewImports.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Category.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\AddCategory.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\EditCategory.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Product.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\AddProduct.cshtml.g.cs
+E:\WebCarFist\WebCarFist\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\EditProduct.cshtml.g.cs

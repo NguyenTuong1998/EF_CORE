@@ -28,7 +28,7 @@ namespace WebCarFist.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=.;Database=CarFirst;Trusted_Connection=True;");
             }
         }
@@ -62,18 +62,23 @@ namespace WebCarFist.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });
-
+           
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(50);
 
-                entity.Property(e => e.Status).IsRequired();
+                entity.Property(e => e.Status)
+                .HasMaxLength(50);
+                
+
 
                 entity.HasOne(d => d.Parent)
-                    .WithMany(p => p.InverseParent)
-                    .HasForeignKey(d => d.ParentId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Category_Category");
+                .WithMany(p => p.InverseParent)
+                .HasForeignKey(d => d.ParentId)
+                 //.OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Category_Category");
             });
 
             modelBuilder.Entity<Invoice>(entity =>
@@ -114,6 +119,10 @@ namespace WebCarFist.Models
                 entity.Property(e => e.Photo)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Description)
+                   .HasMaxLength(500);
+                  
 
                 entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
 

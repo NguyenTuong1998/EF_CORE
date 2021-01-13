@@ -1,0 +1,25 @@
+﻿@page
+@model WebCarFist.Areas.Admin.Pages.AddCategoryModel
+@{
+    ViewData["Title"] = "Add Category";
+    Layout = "~/Areas/Admin/Pages/Shared/_AdminLayout.cshtml";
+}
+<div class="card-body">
+    <form method="post" asp-page="addcategory">
+        <div class="form-group">
+            <label class="small mb-1 text-center font-weight-bold">Create Category</label>
+
+        </div>
+        <div class="form-group">
+            <label class="small mb-1">Category Name</label>
+            <input class="form-control py-4" type="text" asp-for="@Model.category.Name" required="required" placeholder="Category name" />
+        </div>
+        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+
+            <button class="btn btn-primary" type="submit">Save</button>
+            <input type="hidden" asp-for="@Model.category.Id" />
+
+        </div>
+
+    </form>
+</div>
